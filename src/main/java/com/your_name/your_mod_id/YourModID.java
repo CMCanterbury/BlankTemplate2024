@@ -1,9 +1,11 @@
 package com.your_name.your_mod_id;
 
 import com.mojang.logging.LogUtils;
+import com.your_name.your_mod_id.registry.YMIBlocks;
+import com.your_name.your_mod_id.registry.YMICreativeModeTabs;
+import com.your_name.your_mod_id.registry.YMIItems;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.common.NeoForge;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -16,9 +18,10 @@ public class YourModID
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public YourModID(IEventBus modEventBus) {
-        // Register ourselves for server and other game events we are interested in
-        NeoForge.EVENT_BUS.register(this);
 
+        YMIItems.register(modEventBus);
+        YMIBlocks.register(modEventBus);
+        YMICreativeModeTabs.register(modEventBus);
 
     }
 
