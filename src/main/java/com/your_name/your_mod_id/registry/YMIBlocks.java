@@ -21,7 +21,7 @@ public class YMIBlocks {
 
     private static DeferredBlock<Block> registerWithItem(String blockID, Supplier<? extends Block> sup) {
         DeferredBlock<Block> block = registerWithNoItem(blockID, sup);
-        YMIItems.ITEMS.registerSimpleBlockItem(blockID, sup);
+        YMIItems.ITEMS.registerSimpleBlockItem(block);
         return block;
     }
 
